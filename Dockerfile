@@ -2,11 +2,12 @@ FROM node:latest as builder
 
 WORKDIR /app
 COPY package*.json ./
-RUN npm i
+RUN npm i -g pnpm
+RUN pnpm i
 
 COPY . .
 
-RUN npm run build 
+RUN pnpm run build 
 #-------
 FROM nginx:alpine
 WORKDIR /usr/share/nginx/html
