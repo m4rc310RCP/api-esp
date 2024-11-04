@@ -1,0 +1,62 @@
+# Node modules
+node_modules/
+
+# Logs
+logs/
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# Environment variables
+.env
+.env.local
+.env.*.local
+
+# Build output
+dist/
+build/
+tmp/
+out/
+
+# Coverage directory used by testing tools like Jest
+coverage/
+
+# Optional npm cache directory
+.npm
+
+# Optional eslint cache
+.eslintcache
+
+# Optional REPL history
+.node_repl_history
+
+# IDEs and editors
+.vscode/
+.idea/
+*.sublime-workspace
+
+# OS-specific files
+.DS_Store
+Thumbs.db
+
+# TypeScript cache
+*.tsbuildinfo
+
+# Optional dotenv file for local environment variables
+.envrc
+
+# Parcel-bundler cache (if applicable)
+.cache/
+
+# Static exports (for Next.js, if applicable)
+out/
+
+# Yarn integrity file
+.yarn-integrity
+
+# PM2 process file
+.pm2
+
+# Optional folder for debugging
+debug/
