@@ -1,33 +1,24 @@
-# FROM node:latest as builder
-
-# WORKDIR /app
-# COPY package*.json ./
-# RUN npm i -g pnpm
-# RUN pnpm i
-
-# COPY . .
-
-# RUN pnpm run build 
-# #-------
-# FROM nginx:alpine
-# WORKDIR /usr/share/nginx/html
-# RUN rm -rf ./*
-# COPY --from=builder /app/dist .
-# COPY --from=builder /app/nginx/nginx.conf /etc/nginx/conf.d/default.conf
-
-# ENTRYPOINT ["nginx", "-g", "daemon off;"]
-# EXPOSE 3000
-
 FROM node:22
 
+# Define o diretório de trabalho
 WORKDIR /app
+
+# Copia os arquivos de dependência
 COPY package*.json ./
 RUN npm i -g pnpm
 RUN pnpm i
-#CMD ["pnpm", "build"]
+
+# Copia todos os arquivos para o diretório /app
 COPY . .
 
+# Executa o build, garantindo que o `overview.html` seja incluído no dist
 RUN pnpm run build
 
+# Copia o arquivo `overview.html` para o dist, caso ele não esteja lá por padrão
+RUN cp overview.html dist/
+
+# Expõe a porta 3000
 EXPOSE 3000
+
+# Comando de inicialização
 CMD ["pnpm", "start"]
