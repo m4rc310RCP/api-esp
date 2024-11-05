@@ -27,4 +27,5 @@ RUN pnpm i
 COPY . .
 
 EXPOSE 3000
+CMD ["pnpm", "build"]
 CMD ["pnpm", "start"]
