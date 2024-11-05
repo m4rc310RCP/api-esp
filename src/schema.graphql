@@ -3,14 +3,6 @@
 # !!!   DO NOT MODIFY THIS FILE BY YOURSELF   !!!
 # -----------------------------------------------
 
-type Device {
-  sn: ID!
-}
-
 type Query {
   test: String!
-}
-
-type Subscription {
-  verifyDevice: Device!
 }
