@@ -14,9 +14,6 @@ COPY . .
 # Executa o build, garantindo que o `overview.html` seja incluído no dist
 RUN pnpm run build
 
-# Copia o arquivo `overview.html` para o dist, caso ele não esteja lá por padrão
-RUN cp overview.html dist/
-
 # Expõe a porta 3000
 EXPOSE 3000
 
