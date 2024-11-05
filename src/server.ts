@@ -11,7 +11,8 @@ import { pubSub } from './resolvers/subscriptions/pubsub';
 
 // import { NotificationResolver } from "./notification.resolver";
 // import { pubSub } from "./pubsub";
-const overviewHtml = readFileSync(join(__dirname, 'overview.html'), 'utf-8');
+const overview = path.resolve(__dirname, "overview.html");
+const overviewHtml = readFileSync(overview, 'utf-8');
 
 async function bootstrap() {
 	// Build TypeGraphQL executable schema
